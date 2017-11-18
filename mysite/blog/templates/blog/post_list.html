@@ -1,36 +1,12 @@
-<html>
-    <head>
-        <title>Django Girls blog</title>
-    </head>
-    <body>
-
-        <div>
-            <h1><a href="">Django Girls Blog</a></h1>
+{% extends 'blog/base.html' %}
+{% block content %}
+  {% for post in posts %}
+    <div class="post">
+        <div class="date">
+            {{ post.published_date }}
         </div>
-         <div>
-             <h2><a href=""> post list</a></h2>
-{% for post in posts %}
-    <div>
-        <p>publié: {{ post.published_date }}</p>
-        <h1><a href="">{{ post.title }}</a></h1>
+        <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
         <p>{{ post.text|linebreaksbr }}</p>
     </div>
 {% endfor %}
- </div>
-        <div>
-            <p>published: 14.06.2014, 12:14</p>
-            <h2><a href="">Missing until dinner time </a></h2>
-            <p>Meow all night. Mark territory pushes butt to face chase dog then run away munch on tasty moths scratch the postman wake up lick paw wake up owner meow meow. Hide at bottom of staircase to trip human chew iPad power cord chase the pig around the house and meow. Chirp at birds meow meow, i tell my human purr as loud as possible, be the most annoying cat that you can, and, knock everything off the table cough furball into food bowl then scratch owner for a new one. Go into a room to decide you didn't want to be in there anyway loves cheeseburgers ask to go outside and ask to come inside and ask to go outside and ask to come inside. Small kitty warm kitty little balls of fur meow to be let out. Curl into a furry donut run outside as soon as door open yet proudly present butt to human. Slap owner's face at 5am until human fills food dish decide to want nothing to do with my owner today. Scratch me there, elevator butt purr while eating dont wait for the storm to pass, dance in the rain please stop looking at your phone and pet me human give me attention meow head nudges and present belly, scratch hand when stroked. Attack dog, run away and pretend to be victim meow meow meow to be let out bathe private parts with tongue then lick owner's face sleep nap, but meow all night. Chase mice pounce on unsuspecting person or then cats take over the world open the door, let me out, let me out, let me-out, let me-aow, let meaow, meaow! for stare out the window. Thinking longingly about tuna brine friends are not food sniff sniff or destroy the blinds for milk the cow, for lick yarn hanging out of own butt, jump around on couch, meow constantly until given food, . Hide from vacuum cleaner dream about hunting birds kitty poochy. Kitty power purr while eating sleep nap sit by the fire lounge in doorway but eat prawns daintily with a claw then lick paws clean wash down prawns with a lap of carnation milk then retire to the warmest spot on the couch to claw at the fabric before taking a catnap. Play riveting piece on synthesizer keyboard. Spot something, big eyes, big eyes, crouch, shake butt, prepare to pounce roll over and sun my belly. Meow all night swat turds around the house, for open the door, let me out, let me out, let me-out, let me-aow, let meaow, meaow!, always hungry.</p>
-
-<p> Have secret plans. Cats go for world domination fooled again thinking the dog likes me or try to hold own back foot to clean it but foot reflexively kicks you in face, go into a rage and bite own foot, hard, loves cheeseburgers and leave hair everywhere, so purr but all of a sudden cat goes crazy. Swat at dog. Vommit food and eat it again get video posted to internet for chasing red dot, i shredded your linens for you. Leave fur on owners clothes. With tail in the air russian blue but try to jump onto window and fall while scratching at wall so poop on grasses but plop down in the middle where everybody walks yet damn that dog . Leave hair everywhere make meme, make cute face or lick arm hair pose purrfectly to show my beauty. Loves cheeseburgers mrow, annoy kitten brother with poking. Scratch the box have secret plans, so climb a tree, wait for a fireman jump to fireman then scratch his face, but always ensure to lay down in such a manner that tail can lightly brush human's nose or cats are fats i like to pets them they like to meow back. Cats making all the muffins lick face hiss at owner, pee a lot, and meow repeatedly scratch at fence purrrrrr eat muffins and poutine until owner comes back cat is love, cat is life chase mice, yet destroy couch man running from cops stops to pet cats, goes to jail. Adventure always hate dog please stop looking at your phone and pet me but chase the pig around the house eat owner's food. Paw at beetle and eat it before it gets away spot something, big eyes, big eyes, crouch, shake butt, prepare to pounce mice spill litter box, scratch at owner, destroy all furniture, especially couch.</p>
-
-<p>My slave human didn't give me any food so i pooped on the floor use lap as chair, but sit on human so jump five feet high and sideways when a shadow moves, rub whiskers on bare skin act innocent for human is washing you why halp oh the horror flee scratch hiss bite. Hiss at vacuum cleaner eats owners hair then claws head so peer out window, chatter at birds, lure them to mouth jump five feet high and sideways when a shadow moves or chew foot. Ignore the squirrels, you'll never catch them anyway. Try to jump onto window and fall while scratching at wall i just saw other cats inside the house and nobody ask me before using my litter box stare out the window but eat plants, meow, and throw up because i ate plants for destroy couch as revenge for white cat sleeps on a black shirt plan steps for world domination. Missing until dinner time rub face on everything, and mesmerizing birds destroy couch as revenge, for stares at human while pushing stuff off a table for bathe private parts with tongue then lick owner's face or crash against wall but walk away like nothing happened. Meow meow pee in the shoe and put toy mouse in food bowl run out of litter box at full speed mewl for food at 4am stare at ceiling light. Knock over christmas tree. Small kitty warm kitty little balls of fur. Licks paws hiss and stare at nothing then run suddenly away i can haz mrow howl on top of tall thing friends are not food. Eat half my food and ask for more purr as loud as possible, be the most annoying cat that you can, and, knock everything off the table stare at guinea pigs so tuxedo cats always looking dapper. Russian blue spill litter box, scratch at owner, destroy all furniture, especially couch or chase red laser dot. </p>
-        </div>
-
-        <div>
-            <p>published: 14.06.2014, 12:14</p>
-            <h2><a href="">zombie post</a></h2>
-            <p>Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering animata corpora quaeritis. Summus brains sit​​, morbo vel maleficia? De apocalypsi gorger omero undead survivor dictum mauris. Hi mindless mortuis soulless creaturas, imo evil stalking monstra adventus resi dentevil vultus comedat cerebella viventium. Qui animated corpse, cricket bat max brucks terribilem incessu zomby. The voodoo sacerdos flesh eater, suscitat mortuos comedere carnem virus. Zonbi tattered for solum oculi eorum defunctis go lum cerebro. Nescio brains an Undead zombies. Sicut malus putrid voodoo horror. Nigh tofth eliv ingdead.</p>
-        </div>
-    </body>
-</html>
+{% endblock %}
